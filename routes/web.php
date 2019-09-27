@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
+Route::get('/login','JwtControllers@sendtoken')->name('sendtoken');
+Route::post('/login','JwtControllers@login')->name('login');
+Route::get('/logout','JwtControllers@logout')->name('logout');
+Route::post('/decodetoken','JwtControllers@decodetoken')->name('decodetoken');
